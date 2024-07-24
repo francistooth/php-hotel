@@ -1,5 +1,5 @@
 <?php 
-    $hotels = [
+    $hotels_start = [
 
         [
             'name' => 'Hotel Belvedere',
@@ -66,6 +66,12 @@
     <div class="container">
         <h1 class="color-aqua text-center"> PHP HOTEL </h1>
         
+        <form action="index.php" method="get">
+            <input type="radio" name="" id="">
+            <input type="radio" name="" id="">
+            <button class="btn btn-primary" type="submit"> filtra </button>
+        </form>
+
         <table class="table">
             <thead>
                 <tr>
@@ -75,13 +81,13 @@
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($hotels as $index => $hotel): ?>
+                <?php foreach ($hotels_start as $index => $hotel): ?>
                     <tr>
                         <td> <?php echo $hotel['name']; ?> </td>
                         <td> <?php echo $hotel['description']; ?> </td>
                         <td> <?php echo $hotel['parking'] ? 'Si' : 'No'; ?> </td>
                         <td> <?php echo $hotel['vote']; ?> </td>
-                        <td> <?php echo $hotel['distance_to_center']; ?> </td>
+                        <td> <?php echo $hotel['distance_to_center']; ?> km </td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>
